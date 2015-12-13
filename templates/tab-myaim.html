@@ -1,0 +1,37 @@
+<ion-view view-title="饮食目标" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs>
+    <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
+        <ion-nav-back-button>
+
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+        <ion-list>
+            <div class="listboard-head ">
+                <div class="left-green" style=" margin-top :10px;padding-left :5px;font-size :16px;"> 我希望达到的饮食目标</div>
+            </div>
+            <ion-item class="" type="">
+
+                <p class="row" style=" color:#3FB869">短期</p>
+                <div  class="col  col-33  aimcheck" style="margin :5px;align-content :center ;text-align :center;width :28% ">
+                    <span >口腔溃疡</span>
+                </div>
+                <div class="col  col-33  aimcheck" style="margin :5px;align-content :center ;text-align :center;width :28% ">
+                <span>感冒</span>
+                </div>
+                <div class="col  col-33 aimcheck" style="margin :5px;align-content :center ;text-align :center;width :28% ">
+                    <span >润肠通便</span>
+                </div>
+                <p class="row" style=" color:#3FB869">长期</p>
+                <div class="rowline">
+                    <div ng-repeat=" item in items" ng-click="" class="col  col-33 aimcheck" style="margin :5px;align-content :center ;text-align :center;width :28% ">
+                        <div >
+                            {{item.label}}
+                        </div>
+
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
