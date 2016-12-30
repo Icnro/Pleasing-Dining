@@ -1,5 +1,5 @@
 .demo-bg{
-	background: url(/img/dining-bg.png) center;
+	background: url(../img/dining-bg.png) center;
 	background-size:100% auto;
 }
 .demo-row{
@@ -41,7 +41,7 @@ padding-top:60px;
 .demo-device-bg {
     width: 467px;
     height: 800px;
-    background: url(/img/iPhone.png) center top no-repeat;
+    background: url(../img/iPhone.png) center top no-repeat;
     background-size: 467px;
     margin: 0 auto ;
 	}
