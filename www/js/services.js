@@ -260,7 +260,7 @@ angular.module('starter.services', [])
                },
 
 				edit: function(data) {
-					items[0].date=t;
+					// items[0].date=t;
                     console.log(data)
 					if (data.length === 0) {
 						items[0].items.splice(0,items[0].items.length);
@@ -763,7 +763,7 @@ angular.module('starter.services', [])
             today_energy: 0,
             today_protein: 0,
             today_fat: 0,
-            aims: ["Protecting Eyes", "Anti-acne", "Antidiabetics"],
+            aims: ["Protecting Eyes", "Anti-acne", "Cold"],
 			material_rec: [{
 				foodid: 11,
 				foodname: "Pineapple",
