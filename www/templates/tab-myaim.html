@@ -1,4 +1,4 @@
-<ion-view view-title="Aims" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs>
+<ion-view view-title="Goals" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs>
     <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
         <ion-nav-buttons side="left">
             <button class="button-clear back-button button" ng-click="Aimchange()">
@@ -12,14 +12,14 @@
         <ion-list>
               
               <div class="padding ">
-                <div class="left-green" style=" margin-top :10px;margin-left:10px;padding-left :5px;font-size :14px;"> My aims (max. 3 choices)</div>
+                <div class="left-green" style=" margin-left:10px;padding-left :5px;font-size :14px;"> My goals (max. 3 choices)</div>
             </div>
             <div class=" margin-lr15 marginBottom5" style="display:flex;flex-wrap: wrap">
                 <div ng-repeat="item in activeaim as results" class=" aimcheck" ng-click="deleteaim(item)" style="margin :5px;align-content :center ;text-align :center; ">
                     <span class="s-font ">{{item}}</span>
                 </div>
                 <div class="rowline" ng-if="results.length === 0">
-                    <div class="padding mid gray" style="height:42px;"> Please select your aims</div>
+                    <div class="padding mid gray" style="height:42px;"> Please select your goals</div>
 
                 </div>
             </div>

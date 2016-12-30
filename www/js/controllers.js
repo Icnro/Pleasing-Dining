@@ -10,6 +10,17 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
         }
     }
     })
+    .directive('haTabs', function ($rootScope) {
+    return {
+        restrict: 'AE',
+        link: function ($scope) {
+            $rootScope.haTabs = 'has-tabs';
+            $scope.$on('$destroy', function () {
+                $rootScope.haTabs = '';
+            })
+        }
+    }
+    })
 
 .directive('notabs', function ($rootScope) {
         return {
@@ -25,6 +36,7 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
                restrict: 'AE',
                link: function ($scope) {
                    $rootScope.hideTabs = '';
+                    $rootScope.haTabs = 'has-tabs';
                }
            }
     })
@@ -1086,8 +1098,8 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
     };
     })
 
-.controller('AimCtrl', function ($scope, Userinfo, $ionicHistory,$rootScope) {
-    $scope.items = ["Dispel Cold","Nourishing Heart", "Anti-aging","Protecting Eyes","Notifying Kidney","Detox","Replenishing Blood","Reduce Internal Heat","Moistening Lung","Antihypertension","Anti-acne","Whitening","Aid-sleeping","Antidiabetics"]
+.controller('AimCtrl', function ($scope, $state, Userinfo, $ionicHistory,$rootScope) {
+    $scope.items = ["Notifying Kidney","Detox","Antidiabetics","Replenishing Blood","Moistening Lung","Reduce Internal Heat","Antihypertension","Dispel Cold","Whitening","Aid-sleeping", "Anti-aging","Anti-acne","Protecting Eyes","Nourishing Heart"]
     $scope.shortitems = ["Aphthous Stomatits","Cold", "Laxative"];
 	$scope.user = Userinfo.get(0);
     $scope.activeaim = Userinfo.get(0).aims;
@@ -1121,6 +1133,9 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
         $ionicHistory.goBack();
         // console.log($scope.activeaim);
     }
+     $scope.backdash= function () {
+          $rootScope.haTabs = 'has-tabs';
+          $state.go('tab.dash');}
     });
 
 
