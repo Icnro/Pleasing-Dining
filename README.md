@@ -1,10 +1,14 @@
 Pleasing Dining
 =========================
 
-Pleasing Dining is a mobile app, which cooperates with school canteens and provides a booking system and nutrition plan for students. 
+Pleasing Dining is a mobile app, which cooperates with school canteens and provides a booking system and nutrition plan for students.
+
+* * *
+
+[Demo is Here!](http://icnro.github.io/Pleasing-Dining/www/demo.html#/)
 
 ####Four Tabs for different functions
-##### #Home
+##### Home
 * Search
 * Information 
 * Recommendations
@@ -29,7 +33,4 @@ Pleasing Dining is a mobile app, which cooperates with school canteens and provi
 * Advice
 * Setting Goals
 
-* * *
-
-[Demo is Here!](http://icnro.github.io/Pleasing-Dining/www/demo.html#/)
 
