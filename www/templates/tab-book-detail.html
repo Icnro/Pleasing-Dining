@@ -6,7 +6,7 @@
     </ion-nav-bar>
 
     <div class="row ">
-        <div class="col col-50">
+        <div class="col col-25">
 
             <ion-content class="has-header stable-bg "  style="overflow: hidden;bottom:30px;top:44px;width:25%">
                 <div class="  rowline">
@@ -21,8 +21,8 @@
                 </div>
             </ion-content>
         </div>
-        <div class="col col-50">
-            <ion-content on-scroll="getScrollPosition()" class="has-header row stable-bg" style="width:75%;left:25%;bottom:30px;top:44px;" delegate-handle="mainScroll">
+        <div class="col col-75">
+            <ion-content on-scroll="getScrollPosition()" class="has-header row stable-bg" style="width:80%;left:21%;bottom:30px;top:44px;" delegate-handle="mainScroll">
                 <div class="row" id="1">
                     <div class="rowline" style="bottom:0px;margin:0px;">
                         <div class=" col-xs-6" ng-repeat="food in foods | filter: {category: 0 }" ng-click="getfood({{food.id}})">
