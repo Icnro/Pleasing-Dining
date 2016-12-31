@@ -4,7 +4,7 @@
     height: 100%;
     position: absolute;
     z-index: -1;
-    margin-top: 0;
+    /*margin-top: 0;*/
     background: url(../img/dining-bg.png) center;
     	background-size:100% auto;
 }
