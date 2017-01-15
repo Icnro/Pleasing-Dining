@@ -153,7 +153,7 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
     }
     })
 
-.controller('BookCtrl', function ($scope, $ionicModal, $state, Foods, Items, $stateParams, Canteens, Userdishes,Meals,$rootScope){
+.controller('BookCtrl', function ($scope, $ionicGesture, $ionicModal, $state, Foods, Items, $stateParams, Canteens, Userdishes,Meals,$rootScope){
 
     $scope.userdish = Userdishes.get(0).items;
 	$scope.meals = Meals.get(0);
@@ -287,7 +287,7 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
     }
     })
 
-.controller('BookDetailCtrl', function ($scope,  $rootScope, $stateParams, $state, $ionicModal, Foods, Items, $timeout, Meals, $ionicPopup, Canteens, $ionicScrollDelegate, $location, $anchorScroll, Userdishes, ionicToast) {
+.controller('BookDetailCtrl', function ($scope, $rootScope,  $stateParams, $state, $ionicModal, Foods, Items, $timeout, Meals, $ionicPopup, Canteens, $ionicScrollDelegate, $location, $anchorScroll, Userdishes, ionicToast) {
     $scope.floor = Canteens.get($stateParams.bookId);
     $scope.canteen=Canteens.get(parseInt( $stateParams.bookId/10));
     $scope.foods = Foods.all();
@@ -570,7 +570,28 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
     //----------------scroll----------------//
     $scope.tag = 1;
     var current = 0;
-    $scope.scrollTo = function (anchor) {
+    $scope.istag =1
+ 
+    $scope.tagtop = [0];
+    $scope.getScrollPosition = function () {
+ 
+        for (var i = 1; i < 6 ; i++) {
+            $scope.tagtop[i] = document.getElementById(i).getBoundingClientRect().top;
+            if ($scope.tagtop[i] > 44) {
+                $scope.istag = i - 1;
+                if  ($scope.istag < 1){ $scope.istag = 1;};
+               if($scope.tag != $scope.istag){$scope.tag = $scope.istag;
+                //    console.log($scope.tag +"!");};
+                 break;
+            }
+            else if ($scope.tagtop[5] < 0) {
+                $scope.tag = 5;
+                
+            }
+        }
+    };
+   $scope.scrollTo = function (anchor) {
+      
         current = 0;
         for (var i = 1; i <anchor; i++) {
             var elementHeight = document.getElementById(i).offsetHeight;
@@ -581,23 +602,9 @@ angular.module('starter.controllers', ['onezone-datepicker', 'ion-affix', 'ionic
             $ionicScrollDelegate.scrollTo(0, current);
         }
         $scope.tag = anchor;
-        console.log(current - 44);
+        // console.log(current - 44);
     };
-    $scope.tagtop = [0];
-    $scope.getScrollPosition = function () {
-        for (var i = 1; i < 6 ; i++) {
-            $scope.tagtop[i] = document.getElementById(i).getBoundingClientRect().top;
-            if ($scope.tagtop[i] > 44) {
-                $scope.tag = i - 1;
-                break;
-            }
-            else if ($scope.tagtop[5] < 0) {
-                $scope.tag = 5;
-            }
-        }
-    }
-
-    $scope.istag = function(num){return $scope.tag === num;};
+   
     })
 .controller('BookDishCtrl', function ($scope, $stateParams, $state, $ionicModal, Foods,Materials, Items) {
     $scope.dish = Materials.get($stateParams.dishID);
