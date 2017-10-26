@@ -5,7 +5,7 @@
     position: absolute;
     z-index: -1;
     /*margin-top: 0;*/
-    background: url(../img/dining-bg.png) center;
+    /*background: url(../img/dining-bg.png) center;*/
     	background-size:100% auto;
 }
 .demo-row{
